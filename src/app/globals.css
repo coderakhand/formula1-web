@@ -12,6 +12,8 @@
 
 @theme {
   --font-ethnocentric: Ethnocentric-Regular;
+  --color-mclaren: #f47600;
+  --color-ferrari: #710e10;
 }
 
 @theme inline {
@@ -26,7 +28,7 @@
   :root {
     --background: oklch(0% 0 0);
     --foreground: #ededed;
-    --logo: rgb(225,6,0);
+    --logo: rgb(225, 6, 0);
   }
 }
 
