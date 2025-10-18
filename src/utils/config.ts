@@ -158,7 +158,7 @@ export const drivers: driverType[] = [
     lastName: "colapinto",
     number: 43,
     country: "argentina",
-    pfpRoute: "alpine/fracol01/2025alpinefracol01right.webp",
+    pfpRoute: "alpine/fracol01/2025alpinefracol01front.webp",
     npRoute: "alpine/fracol01/2025alpinefracol01numberwhitefrless.webp",
   },
   {

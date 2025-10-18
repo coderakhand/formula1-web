@@ -1,8 +1,9 @@
 import DriversPage from "@/pages/DriversPage";
 
-
 export default function Drivers() {
-  return <div>
-    <DriversPage/>
-  </div>;
+  return (
+    <div className="w-full h-full">
+      <DriversPage />
+    </div>
+  );
 }

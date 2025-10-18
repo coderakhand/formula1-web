@@ -6,7 +6,7 @@ interface storeType {
 }
 
 export const useStore = create<storeType>((set) => ({
-  selectedTab: "Home",
+  selectedTab: "home",
   setSelectedTab: (newSelectedTab: string) =>
     set({ selectedTab: newSelectedTab }),
 }));

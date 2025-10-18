@@ -4,6 +4,7 @@ import { COMMON_MEDIA_URL, driverType } from "@/utils/config";
 import Image from "next/image";
 
 export default function DriverCard({
+  onLoadHandler,
   driver,
   children,
   containerClassName,
@@ -13,6 +14,7 @@ export default function DriverCard({
   bgClassName,
 }: {
   driver: driverType;
+  onLoadHandler?: () => void;
   children?: React.ReactNode;
   containerClassName?: string;
   cardClassName?: string;
@@ -22,7 +24,7 @@ export default function DriverCard({
 }) {
   return (
     <div
-      className={`flex justify-center items-center rounded-md ${
+      className={`flex justify-center items-center rounded-md group ${
         containerClassName ?? "w-39 h-49 bg-white"
       }`}
     >
@@ -33,25 +35,26 @@ export default function DriverCard({
       >
         <div
           className={`absolute w-full h-full ${
-            bgClassName ??
-            "bg-gradient-to-r from-[#F47600]/90 to-[#F47600]/80"
+            bgClassName ?? "bg-gradient-to-r from-[#F47600]/90 to-[#F47600]/80"
           }`}
         />
         <Image
           src={`${COMMON_MEDIA_URL}/${driver.pfpRoute}`}
-          width={300}
-          height={600}
+          width={800}
+          height={800}
           alt="oscar"
           className={`absolute w-56 z-10 ${pfpClassName}`}
+          onLoad={onLoadHandler}
         ></Image>
         <Image
           src={`${COMMON_MEDIA_URL}/${driver.npRoute}`}
-          width={300}
-          height={300}
+          width={800}
+          height={800}
           alt="oscar_number"
-          className={`absolute left-2 top-2 z-10 opacity-55 ${
-            npClassName ?? "w-8"
+          className={`absolute z-10 hidden group-hover:block ${
+            npClassName ?? "w-8 left-2 top-2"
           }`}
+          onLoad={onLoadHandler}
         ></Image>
         {children}
       </div>
