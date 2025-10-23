@@ -1,6 +1,6 @@
 "use client";
 
-import { COMMON_MEDIA_URL, driverType } from "@/utils/config";
+import { COMMON_MEDIA_URL, driverType, getImageUrl } from "@/utils/config";
 import Image from "next/image";
 
 export default function DriverCard({
@@ -12,6 +12,7 @@ export default function DriverCard({
   npClassName,
   pfpClassName,
   bgClassName,
+  labelClassName,
 }: {
   driver: driverType;
   onLoadHandler?: () => void;
@@ -21,6 +22,7 @@ export default function DriverCard({
   npClassName?: string;
   pfpClassName?: string;
   bgClassName?: string;
+  labelClassName?: string;
 }) {
   return (
     <div
@@ -38,8 +40,16 @@ export default function DriverCard({
             bgClassName ?? "bg-gradient-to-r from-[#F47600]/90 to-[#F47600]/80"
           }`}
         />
+        <div
+          className={`absolute w-full bottom-0 opacity-0 group-hover:opacity-100 flex flex-col items-center font-ethnocentric z-20 bg-background transition-all duration-150 delay-80 ease-in-out ${
+            labelClassName ?? "text-[7px]"
+          }`}
+        >
+          <div>{driver.firstName}</div>
+          <div>{driver.lastName}</div>
+        </div>
         <Image
-          src={`${COMMON_MEDIA_URL}/${driver.pfpRoute}`}
+          src={getImageUrl(800, driver.pfpRoute)}
           width={800}
           height={800}
           alt="oscar"
@@ -47,7 +57,7 @@ export default function DriverCard({
           onLoad={onLoadHandler}
         ></Image>
         <Image
-          src={`${COMMON_MEDIA_URL}/${driver.npRoute}`}
+          src={getImageUrl(800, driver.npRoute)}
           width={800}
           height={800}
           alt="oscar_number"
