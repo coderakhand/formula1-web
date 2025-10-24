@@ -6,7 +6,7 @@ import SlantedBarsBackground from "@/components/SlantedBarsBackground";
 import { drivers, driverType, getImageUrl } from "@/utils/config";
 import Image from "next/image";
 
-export function DriversPageForMiniViewPort() {
+export default function DriversPageForMiniViewPort() {
   return (
     <div className="min-h-screen min-w-screen flex justify-center">
       <div className="relative h-full w-full flex flex-col  items-center px-3 pb-10">
