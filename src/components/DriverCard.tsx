@@ -1,7 +1,8 @@
 "use client";
 
-import { COMMON_MEDIA_URL, driverType, getImageUrl } from "@/utils/config";
+import { driverType, getImageUrl } from "@/utils/config";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 export default function DriverCard({
   onLoadHandler,
@@ -13,6 +14,7 @@ export default function DriverCard({
   pfpClassName,
   bgClassName,
   labelClassName,
+  side,
 }: {
   driver: driverType;
   onLoadHandler?: () => void;
@@ -23,6 +25,7 @@ export default function DriverCard({
   pfpClassName?: string;
   bgClassName?: string;
   labelClassName?: string;
+  side?: string;
 }) {
   return (
     <div
@@ -49,11 +52,15 @@ export default function DriverCard({
           <div>{driver.lastName}</div>
         </div>
         <Image
-          src={getImageUrl(800, driver.pfpRoute)}
+          src={
+            side
+              ? getImageUrl(800, driver.pfpRoute, side)
+              : getImageUrl(800, driver.pfpRoute)
+          }
           width={800}
           height={800}
           alt="oscar"
-          className={`absolute w-56 z-10 ${pfpClassName}`}
+          className={twMerge("absolute w-56 z-10", pfpClassName)}
           onLoad={onLoadHandler}
         ></Image>
         <Image
@@ -61,9 +68,10 @@ export default function DriverCard({
           width={800}
           height={800}
           alt="oscar_number"
-          className={`absolute z-10 hidden group-hover:block ${
-            npClassName ?? "w-8 left-2 top-2"
-          }`}
+          className={twMerge(
+            "absolute z-10 hidden group-hover:block",
+            `${npClassName ?? "w-8 left-2 top-2"}`
+          )}
           onLoad={onLoadHandler}
         ></Image>
         {children}

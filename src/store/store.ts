@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
 interface storeType {
-  selectedTab: string;
-  setSelectedTab: (newSelectedTab: string) => void;
+  selectedTab: string | null;
+  setSelectedTab: (newSelectedTab: string | null) => void;
 }
 
 export const useStore = create<storeType>((set) => ({
-  selectedTab: "home",
-  setSelectedTab: (newSelectedTab: string) =>
+  selectedTab: null,
+  setSelectedTab: (newSelectedTab: string | null) =>
     set({ selectedTab: newSelectedTab }),
 }));

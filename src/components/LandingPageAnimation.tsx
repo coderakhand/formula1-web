@@ -28,7 +28,7 @@ export default function LandingPageAnimation() {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: "backIn" }}
-      className="bg-background w-screen h-screen flex justify-center items-center"
+      className="bg-background w-screen h-screen flex justify-center items-center  scale-60  md:scale-80 lg:scale-100"
     >
       <span ref={scope} className="absolute opacity-0">
         <Image
