@@ -8,13 +8,13 @@ import { useEffect } from "react";
 export default function NavButton({ name }: { name: string }) {
   const selectedTab = useStore((state) => state.selectedTab);
   const setSelectedTab = useStore((state) => state.setSelectedTab);
-  const pathname = window.location.pathname;
 
   useEffect(() => {
+    const pathname = window.location.pathname;
     let tab = pathname.slice(1);
     if (tab == "") tab = "home";
     setSelectedTab(tab);
-  }, [pathname, setSelectedTab]);
+  }, [setSelectedTab]);
 
   return (
     <motion.button
