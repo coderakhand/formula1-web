@@ -6,7 +6,7 @@ import { drivers } from "@/utils/config";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { ReactLenis, useLenis } from "lenis/react";
 import { useRef } from "react";
 
 export default function DriversPage() {
