@@ -32,6 +32,7 @@
   --font-ethnocentric: Ethnocentric-Regular;
   --font-formula1: Formula1-Regular;
   --font-titillium: TitilliumWeb-Regular;
+  --breakpoint-smd: 868px;
   --breakpoint-xsm: 594px;
   --breakpoint-xxsm: 354px;
 }

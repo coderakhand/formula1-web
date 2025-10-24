@@ -90,13 +90,13 @@ function DriverPointsBar({
             var(--color-${driverData.team.replaceAll(" ", "")}),
             var(--color-${driverData.team.replaceAll(" ", "")}))`,
           }}
-          className={`relative h-full rounded-se-full group rounded-ee-full flex justify-end ${
+          className={`relative h-full rounded-full flex justify-end ${
             driver.points ? "pr-1.5 xsm:pr-3" : "pr-1"
-          } items-center font-formula1 font-medium max-md:text-sm  sm:font-bold cursor-pointer`}
+          } items-center font-formula1 font-medium max-md:text-sm  sm:font-bold cursor-pointer group`}
         >
           {" "}
           <span className="group-hover:hidden">{driver.points}</span>
-          <div className="absolute w-100 left-0 hidden group-hover:block font-titillium">
+          <div className="absolute w-100 left-1 hidden group-hover:block font-titillium">
             {driver.name}
           </div>
         </motion.div>

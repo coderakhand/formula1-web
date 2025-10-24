@@ -1,6 +1,7 @@
 import { driverType} from "@/utils/config";
 import "flag-icons";
 import MaskedDriverImage from "./MaskedDriverImage";
+import CareerStatsRow from "./CareerStatRow";
 
 export default function DriverStatsCard({
   driver,
@@ -59,19 +60,3 @@ export default function DriverStatsCard({
   );
 }
 
-function CareerStatsRow({
-  statName,
-  statValue,
-}: {
-  statName: string;
-  statValue: number;
-}) {
-  return (
-    <div className="min-w-[60px] w-full lg:h-14 grid grid-cols-[80%_20%]">
-      <div className="font-titillium font-bold text-2xl lg:text-3xl text-neutral-500">
-        {statName}
-      </div>
-      <div className="font-bold font-titillium text-3xl lg:text-4xl">{statValue}</div>
-    </div>
-  );
-}
