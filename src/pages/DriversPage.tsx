@@ -70,7 +70,7 @@ export default function DriversPage() {
 
   return (
     <ReactLenis root>
-      <div className="h-screen w-screen flex justify-center">
+      <div className="h-screen w-screen flex justify-center overflow-x-clip">
         <div className="relative h-full w-full flex flex-col  items-center">
           <div className="fixed z-50 w-full flex justify-center mt-4">
             <NavBar />

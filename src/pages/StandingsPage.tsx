@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 export default function StandingsPage() {
   return (
-    <div className="w-full h-full flex flex-col max-xsm:items-center gap-4 xsm:gap-6 pt-4 xsm:pt-12 max-lg:pb-10">
+    <div className="w-full h-full flex flex-col max-xsm:items-center gap-4 xsm:gap-6 pt-4 xsm:pt-12 max-lg:pb-10 overflow-x-clip">
       <h1 className="font-bold font-ethnocentric text-lg sm:text-xl md:text-2xl">
         2025 Driver Standings
       </h1>
@@ -73,7 +73,7 @@ function DriverPointsBar({
                 : driver.points * (width / 435)
               : driver.points
               ? driver.points * (width / 430)
-              : 8 *( width/ 430),
+              : 8 * (width / 430),
           opacity: 1,
         }}
         transition={{ duration: 1, delay: 0.1, ease: "anticipate" }}
