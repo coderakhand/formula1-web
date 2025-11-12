@@ -69,11 +69,11 @@ function DriverPointsBar({
           width:
             width <= 594
               ? driver.points < 37
-                ? 35 * (width / 430)
-                : driver.points * (width / 435)
+                ? 35 * (width / 450)
+                : driver.points * (width / 455)
               : driver.points
-              ? driver.points * (width / 430)
-              : 8 * (width / 430),
+              ? driver.points * (width / 450)
+              : 8 * (width / 450),
           opacity: 1,
         }}
         transition={{ duration: 1, delay: 0.1, ease: "anticipate" }}
