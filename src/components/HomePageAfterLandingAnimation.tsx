@@ -26,7 +26,7 @@ export default function HomePageAfterLandingAnimation() {
 
   return (
     <>
-      <div className="relative w-full h-full min-h-[746px] flex justify-center items-center overflow-y-auto overflow-x-hidden">
+      <div className="relative w-full h-full min-h-[726px] flex justify-center items-center overflow-y-auto overflow-x-hidden">
         <div className="absolute lg:grayscale-[94%] flex items-center">
           <DriversGrid />
         </div>

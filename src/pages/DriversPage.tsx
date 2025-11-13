@@ -70,13 +70,13 @@ export default function DriversPage() {
 
   return (
     <ReactLenis root>
-      <div className="h-screen w-screen flex justify-center overflow-x-hidden">
+      <div className="h-screen w-screen flex justify-center">
         <div className="relative h-full w-full flex flex-col  items-center">
           <div className="fixed z-50 w-full flex justify-center mt-4">
             <NavBar />
           </div>
           <div ref={ref} className="w-full relative h-full">
-            <div className="sticky-cards relative w-full h-full overflow-hidden">
+            <div className="sticky-cards relative w-full h-full overflow-y-auto overflow-x-hidden">
               {drivers.map((driver) => (
                 <DriverStatsCard key={driver.number} driver={driver} />
               ))}
